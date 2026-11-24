@@ -85,8 +85,8 @@ kaggle.json
 ## 4. Feuille de route
 
 ### Phase 1 : Setup et baseline zéro-entraînement (local, CPU)
-- [ ] Créer le dépôt, `.venv`, `.gitignore`, `requirements.txt` léger.
-- [ ] Installer PyTorch CPU + Ultralytics + OpenCV.
+- [x] Créer le dépôt, .venv, .gitignore, requirements.txt léger.
+- [x] Installer PyTorch CPU + Ultralytics + OpenCV.
 - [ ] Écrire `detector.py` (chargement, `predict`, filtrage classe `person` → `player`).
 - [ ] Écrire `infer_image.py` et `infer_video.py`.
 - [ ] Tester `yolo*n` et `yolo*s` sur 1 image puis 1 vidéo courte (≤ 15 s) de plan large.
