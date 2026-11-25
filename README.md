@@ -26,6 +26,14 @@ $env:PYTHONPATH="src"
 python scripts/infer_video.py --video data/test_video.mp4 --model yolov8n.pt --output outputs/output_video.mp4
 ```
 
+## Dataset (SportsMOT)
+
+Pour l'évaluation (Phase 2), le dataset **SportsMOT** est utilisé :
+```python
+from huggingface_hub import hf_hub_download
+hf_hub_download(repo_id='MCG-NJU/SportsMOT', filename='dataset/train.tar', repo_type='dataset', local_dir='data/sportsmot')
+```
+
 ---
 
 ## Bilan de la Phase 1 : Setup et Baseline
