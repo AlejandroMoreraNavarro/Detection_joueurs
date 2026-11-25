@@ -95,7 +95,7 @@ kaggle.json
 - **Sortie de phase :** baseline qui tourne en local + chiffres de vitesse. Fixer ici les seuils cibles.
 
 ### Phase 2 : Évaluation des limites et choix d'amélioration
-- [ ] Constituer un **jeu d'évaluation** : ~50 à 100 images de plans larges (foot et rugby), annotées à la main en `player` (nombre indicatif, à ajuster). Hors Git.
+- [x] Constituer un **jeu d'évaluation** : ~50 à 100 images de plans larges (foot et rugby), annotées à la main en `player` (nombre indicatif, à ajuster). Hors Git.
 - [ ] Écrire `evaluate.py` : mAP@0.5, rappel, découpage par taille de joueur (petit / moyen / grand).
 - [ ] Lister les erreurs : joueurs manqués (loin, occlusions, mêlées au rugby), faux positifs (public, arbitres, staff).
 - [ ] Tester `imgsz` plus grand, puis tiling/SAHI : gain de rappel vs coût CPU.
@@ -128,3 +128,4 @@ kaggle.json
 | 2026-11-25 | YOLOv8n | 640 | PyTorch CPU | ~70.1 | ~14.2 | - | - | Test vidéo SportsMOT (375 frames, 720p) |
 | 2026-11-25 | YOLOv8s | 640 | PyTorch CPU | ~131.5 | ~7.6 | - | - | Test vidéo SportsMOT (375 frames, 720p) |
 | 2026-11-25 | YOLOv8n (OpenVINO) | 640 | OpenVINO CPU | ~81.2 | ~12.3 | - | - | Export OpenVINO, test vidéo SportsMOT |
+| 2026-11-25 | YOLOv8n | 640 | PyTorch CPU | 39.5 (43.4 total) | 25.3 | 0.864 | 0.885 | 133 images, football, 88 d'une seule séquence (mAP@0.5-0.95: 0.595) |
