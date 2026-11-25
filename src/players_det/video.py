@@ -42,11 +42,16 @@ def read_video(video_path: Union[str, Path], vid_stride: int = 1) -> Generator[T
 
 
 def get_video_writer(output_path: Union[str, Path], fps: float, width: int, height: int) -> cv2.VideoWriter:
-    """Returns an OpenCV VideoWriter configured with MP4V codec."""
+    """Returns an OpenCV VideoWriter configured with avc1 codec."""
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+    fourcc = cv2.VideoWriter_fourcc(*"avc1")
     writer = cv2.VideoWriter(str(output_path), fourcc, fps, (width, height))
+    if not writer.isOpened():
+        # Fallback to mp4v if avc1 is not available on this platform
+        logger.warning("avc1 codec failed, falling back to mp4v")
+        fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+        writer = cv2.VideoWriter(str(output_path), fourcc, fps, (width, height))
     if not writer.isOpened():
         raise ValueError(f"Could not create video writer for {output_path}")
     return writer
