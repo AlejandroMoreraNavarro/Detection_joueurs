@@ -87,11 +87,11 @@ kaggle.json
 ### Phase 1 : Setup et baseline zéro-entraînement (local, CPU)
 - [x] Créer le dépôt, .venv, .gitignore, requirements.txt léger.
 - [x] Installer PyTorch CPU + Ultralytics + OpenCV.
-- [ ] Écrire `detector.py` (chargement, `predict`, filtrage classe `person` → `player`).
-- [ ] Écrire `infer_image.py` et `infer_video.py`.
-- [ ] Tester `yolo*n` et `yolo*s` sur 1 image puis 1 vidéo courte (≤ 15 s) de plan large.
-- [ ] Mesurer ms/image et FPS ; noter les résultats dans ce fichier.
-- [ ] Essayer l'export OpenVINO (CPU Intel i7), puis ONNX en repli ; comparer vitesse et sorties.
+- [x] Écrire `detector.py` (chargement, `predict`, filtrage classe `person` → `player`).
+- [x] Écrire `infer_image.py` et `infer_video.py`.
+- [x] Tester `yolo*n` et `yolo*s` sur 1 image puis 1 vidéo courte (≤ 15 s) de plan large.
+- [x] Mesurer ms/image et FPS ; noter les résultats dans ce fichier.
+- [x] Essayer l'export OpenVINO (CPU Intel i7), puis ONNX en repli ; comparer vitesse et sorties.
 - **Sortie de phase :** baseline qui tourne en local + chiffres de vitesse. Fixer ici les seuils cibles.
 
 ### Phase 2 : Évaluation des limites et choix d'amélioration
@@ -125,4 +125,6 @@ kaggle.json
 
 | Date | Modèle / config | imgsz | Runtime | ms/image | FPS | mAP@0.5 | Rappel | Notes |
 |---|---|---|---|---|---|---|---|---|
-| | | | | | | | | |
+| 2026-11-25 | YOLOv8n | 640 | PyTorch CPU | ~70.1 | ~14.2 | - | - | Test vidéo SportsMOT (375 frames, 720p) |
+| 2026-11-25 | YOLOv8s | 640 | PyTorch CPU | ~131.5 | ~7.6 | - | - | Test vidéo SportsMOT (375 frames, 720p) |
+| 2026-11-25 | YOLOv8n (OpenVINO) | 640 | OpenVINO CPU | ~81.2 | ~12.3 | - | - | Export OpenVINO, test vidéo SportsMOT |

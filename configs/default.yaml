@@ -1,0 +1,5 @@
+model_path: "yolov8n.pt"
+imgsz: 640
+conf_thres: 0.25
+device: "cpu"
+vid_stride: 1
