@@ -36,6 +36,18 @@ hf_hub_download(repo_id='MCG-NJU/SportsMOT', filename='dataset/train.tar', repo_
 
 ---
 
+## Bilan de la Phase 2 : Évaluation sur le jeu de test
+
+- **Jeu de données d'évaluation :** 15 séquences vidéo de football extraites de SportsMOT (`train_extracted/train`), soit **11 113 images** haute résolution (1280x720) contenant **145 228 instances** annotées de classe unique `player`.
+- **Modèle évalué :** YOLOv8n pré-entraîné COCO (filtrage classe `person` → `player`), `imgsz=640`, processeur CPU Intel Core i7.
+- **Métriques obtenues :**
+  - **Précision (Precision) :** 84.9%
+  - **Rappel (Recall) :** 87.3%
+  - **mAP@0.5 :** 86.2% (mAP@0.5-0.95 : 57.4%)
+  - **Vitesse d'inférence :** ~55.5 ms/image (~18.0 FPS sur CPU)
+
+---
+
 ## Bilan de la Phase 1 : Setup et Baseline
 
 - **Modèles testés :** 
