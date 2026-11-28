@@ -5,7 +5,8 @@
 Tu assistes le développement d'un projet de **détection de joueurs** (football / rugby) sur plans larges, par bounding boxes.
 
 - **Tâche unique :** détection monoclasse `player` (boîtes englobantes + score de confiance).
-- **Hors périmètre (ne pas implémenter, même "pour anticiper") :** distinction des équipes, suivi (tracking), Re-ID, OCR de maillots, détection du ballon, segmentation, estimation de pose, homographie/calibration du terrain, interface web, API, déploiement cloud.
+    extension de la tâche : Suivi simple (ByteTrack ou BoT-SORT) sans Re-ID visuel : autorisé comme extension de la Phase 2.
+- **Hors périmètre (ne pas implémenter, même "pour anticiper") :**  Re-ID, OCR de maillots, détection du ballon, segmentation, estimation de pose, homographie/calibration du terrain, interface web, API, déploiement cloud.
 - **Principe directeur : simplicité d'abord.** Si un modèle pré-entraîné remplit déjà la tâche de façon satisfaisante, on l'utilise tel quel et on s'arrête. Ne propose jamais fine-tuning, tiling/SAHI, Kaggle ou changement de modèle tant qu'une limite **mesurée** (Phases 1-2 de `PROJET.md`) ne le justifie.
 - **Pas de sur-ingénierie :** solution la plus simple qui fonctionne. Pas de classes abstraites, de systèmes de plugins, de frameworks de config ou d'options non demandés.
 - Si une demande sort du périmètre ou si elle est ambiguë, **pose une question avant de coder** (une seule, la plus utile).
